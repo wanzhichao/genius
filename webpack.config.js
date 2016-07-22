@@ -29,7 +29,7 @@ module.exports = {
         inline: true,
         progress: true,
         port: 3005,
-        host: "10.13.24.56"
+        host: "localhost"
     },
     resolve: {
         extensions: ['', '.js', '.jsx'],
