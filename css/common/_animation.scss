@@ -1,0 +1,33 @@
+
+@include keyframes(moveL, webkit moz ms spec){
+  0% {
+    @include transform(translateX(0px));
+  }
+  50% {
+    @include transform(translateX(-20px));
+  }
+  100% {
+    @include transform(translateX(0px));
+  }
+}
+@include keyframes(moveR, webkit moz ms spec){
+  0% {
+    @include transform(translateX(0px));
+  }
+  50% {
+    @include transform(translateX(+20px));
+  }
+  100% {
+    @include transform(translateX(0px));
+  }
+}
+@include keyframes(scalePage, webkit moz ms spec){
+  0% {
+    @include transform(scale(1.1));
+    opacity: 0.5;
+  }
+  100% {
+    @include transform(scale(1));
+    opacity: 1;
+  }
+}

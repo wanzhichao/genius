@@ -1,0 +1,84 @@
+.advisor-header{
+  height: 19rem;
+  color: $white;
+  position: relative;
+  background: url(img/advisor-head.png);
+  background-size: cover;
+  @include box-sizing(border-box);
+  .advisor-box{
+    padding-top: 4rem;
+    padding-left: 2rem;
+    padding-right: 1.5rem;
+    @include box-sizing(border-box);
+    .advisor-img{
+      width:8rem;
+      height: 8rem;
+      border-radius: 50%;
+      overflow: hidden;
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .lr-border:before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top:0.4rem;
+    height: 100%;
+    width: 1px;
+    background-color: $gray;
+    @include transform(scale(0.5));
+    @include transform-origin(50% 30%);
+  }
+  .lr-border:after{
+    content: "";
+    position: absolute;
+    right: 0;
+    top:0.4rem;
+    height: 100%;
+    width: 1px;
+    background-color: $gray;
+    @include transform(scale(0.5));
+    @include transform-origin(50% 30%);
+  }
+}
+.advisor-invest-box{
+  width:93%;
+  margin: 1rem auto 0 auto;
+  border-radius: 4px;
+  padding-top: 1.6rem;
+}
+.advisor-title{
+  padding-right: 2rem;
+  color: $gray;
+  font-size: 1.4rem;
+  margin-top: 1rem;
+  position: relative;
+  background: url(img/right.png) no-repeat right;
+  background-size: 0.7rem 1.3rem;
+}
+.can-subscribe-btn{
+  position: absolute;
+  right: 1.5rem;
+  top:1.5rem;
+  padding:7px 0 7px 0;
+  line-height: 1;
+  font-size: 1.4rem;
+  text-align: center;
+  width:7.2rem;
+  border:1px solid $blue;
+  color: $blue;
+  border-radius: 0.4rem;
+}
+.hasSubscribe{
+  color: $gray;
+  border: 1px solid $gray;
+}
+.ready{
+  background-color: $red;
+}
+.runing{
+  background-color: $blue;
+}

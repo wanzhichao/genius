@@ -1,0 +1,37 @@
+{
+  "data": {
+    "canSubscribe": [
+      {
+        "id": "1",
+        "fundName": "隐者投资第1期",
+        "fundState": "未开始",
+        "incomeRate": "12.00",
+        "incomeDay": "20",
+        "successRate": "65.00",
+        "successTime": "20",
+        "subscribeNum": "256/600"
+      },
+      {
+        "id": "2",
+        "fundName": "隐者投资第1期",
+        "fundState": "运行中",
+        "currentRate": "12.00",
+        "incomeDay": "20",
+        "successRate": "65.00",
+        "targetRate": "20.00",
+        "subscribeNum": "256/600"
+      },
+      {
+        "id": "3",
+        "fundState": "已完成",
+        "fundName": "隐者投资第1期",
+        "incomeRate": "12.00",
+        "mostRate": "12.00",
+        "incomeDay": "20",
+        "successRate": "65.00",
+        "targetRate": "20.00",
+        "subscribeNum": "256/600"
+      }
+    ]
+  }
+}

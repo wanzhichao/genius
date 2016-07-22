@@ -1,0 +1,16 @@
+{
+  "data": {
+    "fundState": "未开始",
+    "targetProfit": "12.00",
+    "runDate": 7,
+    "fundDay": 28,
+    "joinNum": 256,
+    "highCount": 500,
+    "userName": "詹一美",
+    "imgURL": "../images/person-img.png",
+    "publishDate": "2016-06-26",
+    "successRate": 56,
+    "profitRate": 52,
+    "successNum": 32
+  }
+}

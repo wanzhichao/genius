@@ -1,0 +1,24 @@
+{
+    "data": [
+      {
+        "fundName": "隐者投资第1期",
+        "incomeRate": "12.00",
+        "incomeDay": "20",
+        "successRate": "65.00",
+        "successTime": "20",
+        "imgURL": "../images/person-img.png",
+        "userName": "詹一美",
+        "subscribeNum": "256/600"
+      },
+      {
+        "fundName": "隐者投资第1期",
+        "incomeRate": "12.00",
+        "incomeDay": "20",
+        "successRate": "65.00",
+        "successTime": "20",
+        "imgURL": "../images/person-img.png",
+        "userName": "詹一美",
+        "subscribeNum": "256/600"
+      }
+    ]
+}

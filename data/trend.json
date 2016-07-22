@@ -1,0 +1,18 @@
+{
+  "data": {
+    "fundState": "2",
+    "currentProfit": "12.23",
+    "targetProfit": "12.00",
+    "runDate": "12/28",
+    "grail": "5.46",
+    "stockName": "中原内配",
+    "stockCode": "SH002448",
+    "oldPrice": "16.50",
+    "newPrice": "17.68",
+    "targetPrice": "18.60",
+    "stopLossPrice": "16.00",
+    "userName": "詹一美",
+    "imgURL": "../images/person-img.png",
+    "publishDate": "2016-06-26"
+  }
+}

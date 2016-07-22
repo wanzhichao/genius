@@ -1,0 +1,159 @@
+.header{
+  height: 23.9rem;
+  @include box-sizing(border-box);
+  background: url(img/head.png) no-repeat;
+  background-size: cover;
+  padding-top: 6.5rem;
+  .main-title{
+    height: 3.6rem;
+    padding-left: 4.2rem;
+    background: url(img/icon.png) no-repeat;
+    background-size: 3.3rem 3.6rem;
+    line-height: 3.6rem;
+    font-size: 3.4rem;
+  }
+  .sub-title{
+    padding: 0 3.6rem;
+    position: relative;
+    display: inline-block;
+    color:$white;
+    font-size: 1.7rem;
+    margin-top: 2rem;
+  }
+  /* draw line */
+  .sub-title:before{
+    content: "";
+    position: absolute;
+    left:0;
+    top:0.8rem;
+    width: 3rem;
+    height: 1px;
+    background-color: #747a87;
+  }
+  .sub-title:after{
+    content: "";
+    position: absolute;
+    right:0;
+    top:0.8rem;
+    width: 3rem;
+    height: 1px;
+    background-color: #747a87;
+  }
+  .finish-state{
+    width: 24rem;
+    height: 1.5rem;
+    margin: 5.4rem auto 0 auto;
+    color:$gray;
+    font-size: 1.5rem;
+  }
+  /* border */
+  .lr-border:before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top:1px;
+    height: 1.5rem;
+    width: 1px;
+    background-color: $gray;
+    @include transform(scale(0.8));
+    @include transform-origin(center 0);
+  }
+  .lr-border:after{
+    content: "";
+    position: absolute;
+    right: 0;
+    top:1px;
+    height: 1.5rem;
+    width: 1px;
+    background-color: $gray;
+    @include transform(scale(0.8));
+    @include transform-origin(center 0);
+  }
+}
+.cont{
+  margin-top: -2rem;
+  padding-bottom: 2rem;
+  background-color: $bg-black;
+  position: relative;
+}
+.invest-box{
+  width:93%;
+  margin: 1rem auto 0 auto;
+  border-radius: 4px;
+  padding-top: 1.6rem;
+  opacity: 0;
+  /*@include transition(all .6s ease-out);*/
+  @include transform(translateX(20px));
+}
+.complete{
+  display: inline-block;
+  height: 1.7rem;
+  line-height: 1.7rem;
+  width: 4rem;
+  margin-left: 0.7rem;
+  vertical-align: top;
+  background-color: #ff8c2e;
+  border-radius: 0.8rem;
+}
+.fail{
+  background-color: $gray;
+}
+.sub-info{
+  position: absolute;
+  color: $gray;
+  font-size: 1.4rem;
+  bottom: 0.2rem;
+  left: 12rem;
+}
+.footer-cont{
+  height: 3.2rem;
+  line-height: 3.2rem;
+  .person-img{
+    width:3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
+    box-shadow: 0 0 2px 2px rgba(0,0,0,0.2);
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: top;
+    img{
+      width: 100%;
+      height: 100%;}
+  }
+}
+.snake-bar{
+  position: fixed;
+  right: 1.8rem;
+  bottom: 1.8rem;
+  width: 6rem;
+  height: 6rem;
+  .my-info{
+    background-color: $red;
+    border-radius: 50%;
+    box-shadow: 0 0 5px 5px rgba(255,0,0,0.2);
+  }
+}
+
+.box-footer{
+  padding: 1rem 1.5rem 1rem 1.5rem;
+}
+/*scale page*/
+/*.scale-box{
+  @include transition(all .6s ease-out);
+  @include transform(scale(1.1));
+  opacity: 0.6;
+}
+.reset-scale{
+  @include transform(scale(1));
+  opacity: 1;
+}*/
+.scale-box{
+  @include animation(scalePage .6s ease-in-out backwards)
+}
+/*
+.invest-box-animL{
+  @include animation(moveL .3s ease-in-out 1s);
+}
+.invest-box-animR{
+  @include animation(moveR .3s ease-in-out 1s);
+}*/

@@ -1,0 +1,128 @@
+/* header */
+.detail-header{
+  height: 27.5rem;
+  padding-top: 3.2rem;
+  @include box-sizing(border-box);
+  @include gradient(#d12930, #eb333b);
+  .sub-state{
+    border: 1px solid $white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.8rem;
+    margin-left: 0.8rem;
+  }
+  .pct-num{
+    font-size: 6.5rem;
+  }
+  .info{
+    margin: 2.6rem auto 0 auto;
+    width: 34.5rem;
+    /* border */
+    .lr-border:before{
+      content: "";
+      position: absolute;
+      left: 0;
+      top:0.4rem;
+      height: 100%;
+      width: 1px;
+      background-color: $pink;
+      @include transform(scale(0.5));
+      @include transform-origin(50% 30%);
+    }
+    .lr-border:after{
+      content: "";
+      position: absolute;
+      right: 0;
+      top:0.4rem;
+      height: 100%;
+      width: 1px;
+      background-color: $pink;
+      @include transform(scale(0.5));
+      @include transform-origin(50% 30%);
+    }
+  }
+}
+
+/* content */
+.detail-cont{
+  padding:0.3rem 0 0 1.5rem;
+}
+.person-info{
+  padding: 1.8rem 2.5rem 1.8rem 1.1rem;
+}
+.more-info{
+  width: 100%;
+  height: 4.5rem;
+  .person-img-detail{
+    width:4.5rem;
+    height: 4.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 3px 3px rgba(0,0,0,0.2);
+    img{
+      width:100%;
+      height: 100%;
+    }
+  }
+  .other-detail{
+    line-height: 4.5rem;
+    height: 100%;
+    color: $blue;
+    .get-more{
+      font-size: 14px;
+      line-height: 1;
+    }
+  }
+}
+/* subscribe */
+.subscribe{
+  width: 87%;
+  padding: 3rem 3.5rem;
+  margin: -6rem auto 0 auto;
+  border-radius: 4px;
+  box-shadow: 0 0 5px 5px rgba(255,0,0,0.03);
+  @include box-sizing(border-box);
+  .subscribe-cont{
+    height: 3.2rem;
+    line-height: 3.2rem;
+    .subscribe-btn{
+      line-height: 1;
+      padding: 7px 0 7px 0;
+      width:7.2rem;
+      border:1px solid $blue;
+      color: $blue;
+      border-radius: 0.4rem;
+      float: right;
+    }
+  }
+}
+
+/* success rate */
+.success-box{
+  padding-left: 1.1rem;
+  margin-top: 2rem;
+  height: 8.7rem;
+  .success-txt{
+    width: 9.8rem;
+  }
+  .success-rate{
+    padding-right: 1.5rem;
+    .rate-box{
+      height: 0.4rem;
+      background-color: #e6e6e6;
+      .rate-pct{
+        @include transition(width .3s ease-out);
+        background-color: $red;
+        height: 100%;
+      }
+    }
+  }
+  .success-rate-txt{
+    width:5.6rem;
+  }
+}
+.add-icon{
+  display: inline-block;
+  font-weight: bold;
+  vertical-align: top;
+  font-size: 1.3rem;
+}

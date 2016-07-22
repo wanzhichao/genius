@@ -1,0 +1,30 @@
+// -----------------750--------------------
+@mixin queryWidth($min, $max) {
+  @if $min == -1 {
+    @media screen and (max-width: $max+px) {
+      html {
+        font-size: ( ($max+1) / 375 ) * 10px;
+      }
+    }
+  } @else if $max == -1 {
+    @media screen and (min-width: $min+px) {
+      html {
+        font-size: ( $min / 375 ) * 10px;
+      }
+    }
+  } @else {
+    @media screen and (min-width: $min+px) and (max-width: $max+px) {
+      html {
+        font-size: ( $min / 375 ) * 10px;
+      }
+    }
+  }
+}
+@include queryWidth(-1, 319); // for iphone 4
+@include queryWidth(320, 359); // for iphone 5
+@include queryWidth(360, 374);
+@include queryWidth(375, 383); // for iphone 6
+@include queryWidth(384, 399);
+@include queryWidth(400, 413);
+@include queryWidth(414, -1); // for iphone 6 plus
+

@@ -1,0 +1,420 @@
+@charset "UTF-8";
+@import "common/rem";
+@import "common/css3lib";
+/**
+* 页面初始化scss
+* 基于neat.css    https://github.com/shenduxian1/cube/blob/gh-pages/build/neat.css
+* 版本:1.0.0
+* update:2014-03-03
+*change-log:
+        2014-12-12：
+            1.增加了h5-h100的关于高度height类
+            2.增加了上下，左右双方位的margin，padding类
+        2015-03-03
+           1.增加了fix定位的多角度，在安卓版商城APP里对translateX(-50%)会失效导致错位
+       2015-05-13
+            1.translate均改为3d
+            2.间距控制优化为5,10,15,20,25这5种
+       2015-9-10
+            1.字号增加了13,15,17,19等奇数
+*/
+/* ================================================================================
+                                                                                            1. reset
+   ================================================================================ */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td { margin: 0; padding: 0; }
+h1, h2, h3, h4, h5, h6, input, textarea, select, button { font-size: 100%; font-weight: normal; }
+ul, ol { list-style-type: none; list-style-image: none; }
+li { list-style: none; }
+html, body { -webkit-user-select: none; -moz-user-select: none; user-select: none; }
+a, img { -webkit-touch-callout: none; }
+a { text-decoration: none; color: #333; }
+a:active, a:hover { outline: 0 none; }
+a:focus { outerline: 1px dotted; }
+img { vertical-align: middle; }
+/**
+ * 防止所有浏览器中的<sub>和<sup>影响行高
+ * http://jsbin.com/usoyal/1/edit
+ */
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+/**
+ * 中文优先使用冬青黑体简体(OS X)、微软雅黑(Windows)和文泉驿微米黑(Linux)
+ * 西文使用 tahoma
+ * 1. 防止元素中「font-family」不能继承
+ * 2. 西文字体和 OS X 字体写在前面
+ * 3. Opera 12.1 之前版本不支持中文字体的英文名称
+ * 4. 微软雅黑「\5FAE\8F6F\96C5\9ED1」,中易宋体「\5B8B\4F53」
+ */
+body,
+button, /* 1 */
+input, /* 1 */
+select, /* 1 */
+textarea /* 1 */
+{
+  font-family: 'helvetica neue', tahoma, 'hiragino sans gb', stheiti, 'wenquanyi micro hei', \5FAE\8F6F\96C5\9ED1, \5B8B\4F53, sans-serif;
+}
+/**
+ * 1. 修正所有浏览器中字体不继承的问题
+ * 2. 修正所有浏览器中字号不继承的问题
+ * 3. 改善在所有浏览器下的垂直对齐方式
+ */
+button,
+input,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 2 */
+  vertical-align: baseline; /* 3 */
+}
+/**
+ * 1. 移除 IE6-11 中默认的垂直滚动条
+ * 2. 统一所有浏览器中的垂直对齐以及增强文字可读性
+ * 3. 禁止水平拖动，防止破坏布局
+ */
+textarea {
+  overflow: auto; /* 1 */
+  vertical-align: top; /* 2 */
+  resize: vertical; /* 3 */
+}
+/* ================================================================================
+                                                                                              1.2 html5 reset
+   ================================================================================ */
+section, article, aside, header, footer, nav, figure, menu { display: block; padding: 0; margin: 0; }
+* { -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+html, body, form, fieldset, p, div, h1, h2, h3, h4, h5, h6 { -webkit-text-size-adjust: none; }
+input, button, select, textarea { outline: none; -webkit-appearance: none; /*修正ios下的默认阴影*/
+}
+input { border: none; }
+input:focus::-webkit-input-placeholder { color: #efefef; }
+/*
+* 页面字体初始大小设置
+*/
+html { -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; text-size-adjust: 100%;  /* 10/16=62.5% */
+}
+body {  line-height: 1; }
+/**
+ * 修正未定义为「block」的元素
+ */
+article, aside, figcaption, figure, footer, header, nav, section, summary { display: block; }
+/* ================================================================================
+                                                                                                  2.css工具类
+   ================================================================================ */
+/**
+ *  页面容器
+ */
+
+html, body { width: 100%; min-width: 320px; min-height: 100%; }
+html { height: 100%; }
+//高级浏览器下的滚动模式
+.ex-mode { height: 100%; overflow-y: scroll; -webkit-touch-scrolling: touch; }
+//oneScreen-mode  单屏模式
+.os-mode { width: 100%; height: 100%; overflow: hidden; }
+/**
+ * 文字相关
+ */
+.size10 { font-size: 10px; }
+.size12 { font-size: 12px; }
+.size13 { font-size: 13px; }
+.size14 { font-size: 14px; }
+.size15 { font-size: 15px; }
+.size16 { font-size: 16px; }
+.size17 { font-size: 17px; }
+.size18 { font-size: 18px; }
+.size19 { font-size: 19px; }
+.size20 { font-size: 20px; }
+.size22 { font-size: 22px; }
+.size24 { font-size: 24px; }
+.size26 { font-size: 26px; }
+.size28 { font-size: 28px; }
+.size30 { font-size: 30px; }
+.size32 { font-size: 32px; }
+.size34 { font-size: 34px; }
+.size36 { font-size: 36px; }
+.size38 { font-size: 38px; }
+.size40 { font-size: 40px; }
+.size10r { font-size: 1rem; }
+.size12r { font-size: 1.2rem; }
+.size13r { font-size: 1.3rem; }
+.size14r { font-size: 1.4rem; }
+.size15r { font-size: 1.5rem; }
+.size16r { font-size: 1.6rem; }
+.size17r { font-size: 1.7rem; }
+.size18r { font-size: 1.8rem; }
+.size19r { font-size: 1.9rem; }
+.size20r { font-size: 2.0rem; }
+.size22r { font-size: 2.2rem; }
+.size24r { font-size: 2.4rem; }
+.size26r { font-size: 2.6rem; }
+.size28r { font-size: 2.8rem; }
+.size30r { font-size: 3.0rem; }
+.size32r { font-size: 3.2rem; }
+.size34r { font-size: 3.4rem; }
+.size36r { font-size: 3.6rem; }
+.size38r { font-size: 3.8rem; }
+.size40r { font-size: 4.0rem; }
+
+.font-bold { font-weight: bold; }
+.ta-l { text-align: left; }
+.ta-c { text-align: center; }
+.ta-r { text-align: right; }
+.va-tb { vertical-align: text-bottom; }
+.va-m { vertical-align: middle; }
+//a标签填充满父容器并block
+.block { display: block; }
+.inline-block{display: inline-block;}
+.hide{ display: none; }
+.blockA { display: block; width: 100%; height: 100%; @include box-sizing(border-box) }
+//单行溢出后...
+.ellipsis { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+/*float 相关*/
+.fl { float: left; }
+.fr { float: right; }
+.clearfix { display: inline-table; display: block; zoom: 1 }
+.clearfix:after { clear: both; content: "."; display: block; height: 0; visibility: hidden }
+/**
+ * position 用于容器内元素定位
+ */
+.pr { position: relative; }
+.abs{ position: absolute; }
+.abs-lt { position: absolute; left: 0; top: 0; }
+.abs-lm { position: absolute; left: 0; top: 50%; @include transform(translate3d(0, -50%, 0)) }
+.abs-lb { position: absolute; left: 0; bottom: 0; }
+.abs-mt { position: absolute; left: 50%; top: 0; @include transform(translate3d(-50%, 0, 0)) }
+.abs-mm { position: absolute; left: 50%; top: 50%; @include transform(translate3d(-50%, -50%, 0)) }
+.abs-mb { position: absolute; left: 50%; bottom: 0; @include transform(translate3d(-50%, 0, 0)) }
+.abs-rt { position: absolute; right: 0; top: 0; }
+.abs-rm { position: absolute; right: 0; top: 50%; @include transform(translate3d(0, -50%, 0)) }
+.abs-rb { position: absolute; right: 0; bottom: 0; }
+//flex 容器子元素定位
+.flex-lm{@include flexBox;@include box-pack(start);@include justify-content(flex-start);@include box-align(center);@include align-items(center);}
+.flex-mt{@include flexBox;@include box-pack(center);@include justify-content(center);@include box-align(start);@include align-items(flex-start);}
+.flex-mm{@include flexBox;@include box-pack(center);@include justify-content(center);@include box-align(center);@include align-items(center);}
+.flex-mb{@include flexBox;@include box-pack(center);@include justify-content(center);@include box-align(end);@include align-items(flex-end);}
+.flex-rm{@include flexBox;@include box-pack(end);@include justify-content(flex-end);@include box-align(center);@include align-items(center);}
+//fix
+.fix-lt { position: fixed; left: 0; top: 0 }
+.fix-lm { position: fixed; left: 0; top: 50%; @include transform(translate3d(0, -50%, 0)) }
+.fix-lb { position: fixed; left: 0; bottom: 0 }
+.fix-mt { position: fixed; left: 50%; top: 0; @include transform(translate3d(-50%, 0, 0)) }
+.fix-mm { position: fixed; left: 50%; top: 50%; @include transform(translate3d(-50%, -50%, 0)) }
+.fix-mb { position: fixed; left: 50%; bottom: 0; @include transform(translate3d(-50%, 0, 0)) }
+.fix-rt { position: fixed; right: 0; top: 0; }
+.fix-rm { position: fixed; right: 0; top: 50%; @include transform(translate3d(0, -50%, 0)) }
+.fix-rb { position: fixed; right: 0; bottom: 0; }
+/**
+ *layout 用于容器布局
+ */
+//未知高度垂直居中组件 center-box
+.center-box { font-size: 0; height: 100%; /* 继承父级高度 */
+  letter-spacing: -5px; }
+.center-box .center-hack { display: inline-block; font-size: 0; width: 0; height: 100%; vertical-align: middle; }
+.center-box .center-body { letter-spacing: normal; word-spacing: normal; display: inline-block; vertical-align: middle; /* 保证文字垂直居中 */
+  padding: 0 !important; /* 防止设置边距导致居中失效 */
+  margin: 0 !important; width: 100%; /* 保证连续字符也能居中 */
+  white-space: normal; /* 保证连续字符换行 */
+  word-wrap: break-word; }
+.center-box .center-img { display: inline-block; width: 100%; text-align: center; /* 图片默认水平居中 */
+  vertical-align: middle; padding: 0 !important; /* 防止设置边距导致居中失效 */
+  margin: 0 !important; }
+.center-box img { vertical-align: middle; /* 去除现代浏览器 img 底部空隙 */
+}
+
+/* margin  px */
+.m5 { margin: 5px; }
+.m10 { margin: 10px; }
+.m15 { margin: 15px; }
+.m20 { margin: 20px; }
+.m25 { margin: 25px; }
+.mtb5 { margin-top: 5px; margin-bottom: 5px; }
+.mtb10 { margin-top: 10px; margin-bottom: 10px; }
+.mtb15 { margin-top: 15px; margin-bottom: 15px; }
+.mtb20 { margin-top: 20px; margin-bottom: 20px; }
+.mtb25 { margin-top: 25px; margin-bottom: 25px; }
+.mlr5 { margin-left: 5px; margin-right: 5px; }
+.mlr10 { margin-left: 10px; margin-right: 10px; }
+.mlr15 { margin-left: 15px; margin-right: 15px; }
+.mlr20 { margin-left: 20px; margin-right: 20px; }
+.mlr25 { margin-left: 25px; margin-right: 25px; }
+.mt5 { margin-top: 5px; }
+.mt10 { margin-top: 10px; }
+.mt15 { margin-top: 15px; }
+.mt20 { margin-top: 20px; }
+.mt25 { margin-top: 25px; }
+.mr5 { margin-right: 5px; }
+.mr10 { margin-right: 10px; }
+.mr15 { margin-right: 15px; }
+.mr20 { margin-right: 20px; }
+.mr25 { margin-right: 25px; }
+.mb5 { margin-bottom: 5px; }
+.mb10 { margin-bottom: 10px; }
+.mb15 { margin-bottom: 15px; }
+.mb20 { margin-bottom: 20px; }
+.mb25 { margin-bottom: 25px; }
+.ml5 { margin-left: 5px; }
+.ml10 { margin-left: 10px; }
+.ml15 { margin-left: 15px; }
+.ml20 { margin-left: 20px; }
+.ml25 { margin-left: 25px; }
+/**
+ * padding
+ */
+.p5 { padding: 5px; }
+.p10 { padding: 10px; }
+.p15 { padding: 15px; }
+.p20 { padding: 20px; }
+.p25 { padding: 25px; }
+.ptb5 { padding-top: 5px; padding-bottom: 5px; }
+.ptb10 { padding-top: 10px; padding-bottom: 10px; }
+.ptb15 { padding-top: 15px; padding-bottom: 15px; }
+.ptb20 { padding-top: 20px; padding-bottom: 20px; }
+.ptb25 { padding-top: 25px; padding-bottom: 25px; }
+.plr5 { padding-left: 5px; padding-right: 5px; }
+.plr10 { padding-left: 10px; padding-right: 10px; }
+.plr15 { padding-left: 15px; padding-right: 15px; }
+.plr20 { padding-left: 20px; padding-right: 20px; }
+.plr25 { padding-left: 25px; padding-right: 25px; }
+.pt5 { padding-top: 5px; }
+.pt10 { padding-top: 10px; }
+.pt15 { padding-top: 15px; }
+.pt20 { padding-top: 20px; }
+.pt25 { padding-top: 25px; }
+.pr5 { padding-right: 5px; }
+.pr10 { padding-right: 10px; }
+.pr15 { padding-right: 15px; }
+.pr20 { padding-right: 20px; }
+.pr25 { padding-right: 25px; }
+.pb5 { padding-bottom: 5px; }
+.pb10 { padding-bottom: 10px; }
+.pb15 { padding-bottom: 15px; }
+.pb20 { padding-bottom: 20px; }
+.pb25 { padding-bottom: 25px; }
+.pl5 { padding-left: 5px; }
+.pl10 { padding-left: 10px; }
+.pl15 { padding-left: 15px; }
+.pl20 { padding-left: 20px; }
+.pl25 { padding-left: 25px; }
+/**
+  *margin
+  */
+.auto { margin-left: auto; margin-right: auto; }
+.m5r { margin: 0.5rem; }
+.m10r { margin: 1rem; }
+.m15r { margin: 1.5rem; }
+.m20r { margin: 2rem; }
+.m25r { margin: 2.5rem; }
+.mtb5r { margin-top: 0.5rem; margin-bottom: 0.5rem; }
+.mtb10r { margin-top: 1rem; margin-bottom: 1rem; }
+.mtb15r { margin-top: 1.5rem; margin-bottom: 1.5rem; }
+.mtb20r { margin-top: 2rem; margin-bottom: 2rem; }
+.mtb25r { margin-top: 2.5rem; margin-bottom: 2.5rem; }
+.mlr5r { margin-left: 0.5rem; margin-right: 0.5rem; }
+.mlr10r { margin-left: 1rem; margin-right: 1rem; }
+.mlr15r { margin-left: 1.5rem; margin-right: 1.5rem; }
+.mlr20r { margin-left: 2rem; margin-right: 2rem; }
+.mlr25r { margin-left: 2.5rem; margin-right: 2.5rem; }
+.mt5r { margin-top: 0.5rem; }
+.mt10r { margin-top: 1rem; }
+.mt15r { margin-top: 1.5rem; }
+.mt20r { margin-top: 2rem; }
+.mt25r { margin-top: 2.5rem; }
+.mr5r { margin-right: 0.5rem; }
+.mr10r { margin-right: 1rem; }
+.mr15r { margin-right: 1.5rem; }
+.mr20r { margin-right: 2rem; }
+.mr25r { margin-right: 2.5rem; }
+.mb5r { margin-bottom: 0.5rem; }
+.mb10r { margin-bottom: 1rem; }
+.mb15r { margin-bottom: 1.5rem; }
+.mb20r { margin-bottom: 2rem; }
+.mb25r { margin-bottom: 2.5rem; }
+.ml5r { margin-left: 0.5rem; }
+.ml10r { margin-left: 1rem; }
+.ml15r { margin-left: 1.5rem; }
+.ml20r { margin-left: 2rem; }
+.ml25r { margin-left: 2.5rem; }
+/**
+ * padding
+ */
+.p5r { padding: 0.5rem; }
+.p10r { padding: 1rem; }
+.p15r { padding: 1.5rem; }
+.p20r { padding: 2rem; }
+.p25r { padding: 2.5rem; }
+.ptb5r { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+.ptb10r { padding-top: 1rem; padding-bottom: 1rem; }
+.ptb15r { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+.ptb20r { padding-top: 2rem; padding-bottom: 2rem; }
+.ptb25r { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+.plr5r { padding-left: 0.5rem; padding-right: 0.5rem; }
+.plr10r { padding-left: 1rem; padding-right: 1rem; }
+.plr15r { padding-left: 1.5rem; padding-right: 1.5rem; }
+.plr20r { padding-left: 2rem; padding-right: 2rem; }
+.plr25r { padding-left: 2.5rem; padding-right: 2.5rem; }
+.pt5r { padding-top: 0.5rem; }
+.pt10r { padding-top: 1rem; }
+.pt15r { padding-top: 1.5rem; }
+.pt20r { padding-top: 2rem; }
+.pt25r { padding-top: 2.5rem; }
+.pr5r { padding-right: 0.5rem; }
+.pr10r { padding-right: 1rem; }
+.pr15r { padding-right: 1.5rem; }
+.pr20r { padding-right: 2rem; }
+.pr25r { padding-right: 2.5rem; }
+.pb5r { padding-bottom: 0.5rem; }
+.pb10r { padding-bottom: 1rem; }
+.pb15r { padding-bottom: 1.5rem; }
+.pb20r { padding-bottom: 2rem; }
+.pb25r { padding-bottom: 2.5rem; }
+.pl5r { padding-left: 0.5rem; }
+.pl10r { padding-left: 1rem; }
+.pl15r { padding-left: 1.5rem; }
+.pl20r { padding-left: 2rem; }
+.pl25r { padding-left: 2.5rem; }
+/*占位元素*/
+.placeBlock-5 { width: 100%; height: 0.5rem; display: block }
+.placeBlock-10 { width: 100%; height: 1rem; display: block }
+.placeBlock-15 { width: 100%; height: 1.5rem; display: block }
+.placeBlock-20 { width: 100%; height: 2rem; display: block }
+.placeBlock-25 { width: 100%; height: 2.5rem; display: block }
+.placeBlock-30 { width: 100%; height: 3rem; display: block }
+.placeBlock-40 { width: 100%; height: 4rem; display: block }
+.placeBlock-50 { width: 100%; height: 5rem; display: block }
+/* 通用宽度 percent width value */
+.pct5 { width: 5%; }
+.pct10 { width: 10%; }
+.pct15 { width: 15%; }
+.pct20 { width: 20%; }
+.pct25 { width: 25%; }
+.pct30 { width: 30%; }
+.pct33 { width: 33.3%; }
+.pct40 { width: 40%; }
+.pct50 { width: 50%; }
+.pct60 { width: 60%; }
+.pct66 { width: 66.6%; }
+.pct70 { width: 70%; }
+.pct75 { width: 75%; }
+.pct80 { width: 80%; }
+.pct85 { width: 85%; }
+.pct90 { width: 90%; }
+.pct100 { width: 100%; }
+.h10 { height: 10%; }
+.h20 { height: 20%; }
+.h30 { height: 30%; }
+.h40 { height: 40%; }
+.h50 { height: 50%; }
+.h55 { height: 55%; }
+.h60 { height: 60%; }
+.h65 { height: 65%; }
+.h70 { height: 70%; }
+.h75 { height: 75%; }
+.h80 { height: 80%; }
+.h85 { height: 85%; }
+.h90 { height: 90%; }
+.h95 { height: 95%; }
+.h100 { height: 100%; }
+.fullLayer { width: 100%; height: 100%; }
+/* flex布局 */
+.flexbox { @include flexBox }
+.flexbox-item { @include flexItem(1) }
+.flex-column{ @include flex-column }
