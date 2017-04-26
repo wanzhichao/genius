@@ -29,10 +29,17 @@
     "url-loader": "^0.5.7",
     "webpack": "^1.13.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "cz-conventional-changelog": "^2.0.0"
+  },
   "scripts": {
     "dev": "webpack-dev-server --hot"
   },
   "author": "udc-mobile",
-  "license": "ISC"
+  "license": "ISC",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }
