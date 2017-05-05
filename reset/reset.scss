@@ -1,0 +1,352 @@
+/* font */
+
+.bold{
+    font-weight: bold;
+}
+
+.size10 {
+	font-size: 10px; /*!px*/
+}
+
+.size12 {
+	font-size: 12px; /*!px*/
+}
+
+.size13 {
+	font-size: 13px; /*!px*/
+}
+
+.size14 {
+	font-size: 14px; /*!px*/
+}
+
+.size15 {
+	font-size: 15px; /*!px*/
+}
+
+.size16 {
+	font-size: 16px; /*!px*/
+}
+
+.size17 {
+	font-size: 17px; /*!px*/
+}
+
+.size18 {
+	font-size: 18px; /*!px*/
+}
+
+.size19 {
+	font-size: 19px; /*!px*/
+}
+
+.size20 {
+	font-size: 20px; /*!px*/
+}
+
+.size22 {
+	font-size: 22px; /*!px*/
+}
+
+.size24 {
+	font-size: 24px; /*!px*/
+}
+
+.size26 {
+	font-size: 26px; /*!px*/
+}
+
+.size28 {
+	font-size: 28px; /*!px*/
+}
+
+.size30 {
+	font-size: 30px; /*!px*/
+}
+
+.ta-l{
+    text-align: left;
+}
+
+.ta-r{
+    text-align: right;
+}
+
+.ta-c{
+    text-align: center;
+}
+
+.va-tb{
+    vertical-align: text-bottom;
+}
+
+.va-m{
+    vertical-align: middle;
+}
+
+.block{
+    display: block;
+}
+
+.ellipsis{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.fl{
+    float: left;
+}
+
+.fr{
+    float: right;
+}
+
+/* position */
+
+.pr{
+    position: relative;
+}
+
+.abs{
+    position: absolute;
+}
+
+.abs-lt{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.abs-lm{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate3d(0, -50%, 0);
+}
+
+.abs-lb{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.abs-mt {
+	position: absolute;
+	left: 50%;
+	top: 0;
+	transform: translate3d(-50%, 0, 0)
+}
+
+.abs-mm {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate3d(-50%, -50%, 0)
+}
+
+.abs-mb {
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	transform: translate3d(-50%, 0, 0)
+}
+
+.abs-rt {
+	position: absolute;
+	right: 0;
+	top: 0
+}
+
+.abs-rm {
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translate3d(0, -50%, 0)
+}
+
+.abs-rb {
+	position: absolute;
+	right: 0;
+	bottom: 0
+}
+
+.fix-lt {
+	position: fixed;
+	left: 0;
+	top: 0
+}
+
+.fix-lm {
+	position: fixed;
+	left: 0;
+	top: 50%;
+	transform: translate3d(0, -50%, 0)
+}
+
+.fix-lb {
+	position: fixed;
+	left: 0;
+	bottom: 0
+}
+
+.fix-mt {
+	position: fixed;
+	left: 50%;
+	top: 0;
+	transform: translate3d(-50%, 0, 0)
+}
+
+.fix-mm {
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	transform: translate3d(-50%, -50%, 0)
+}
+
+.fix-mb {
+	position: fixed;
+	left: 50%;
+	bottom: 0;
+	transform: translate3d(-50%, 0, 0)
+}
+
+.fix-rt {
+	position: fixed;
+	right: 0;
+	top: 0
+}
+
+.fix-rm {
+	position: fixed;
+	right: 0;
+	top: 50%;
+	transform: translate3d(0, -50%, 0)
+}
+
+.fix-rb {
+	position: fixed;
+	right: 0;
+	bottom: 0
+}
+
+.auto{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.full{
+    width: 100%;
+    height: 100%;
+}
+
+/* mixins */
+
+@mixin auto{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@mixin ellipsis{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+/* flex */
+
+@mixin flex-mm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 1px border */
+
+@mixin border-t($color: #e5e5e5){
+    position: relative;
+    &:before{
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 1px;
+        border-top: 1px solid $color;
+        transform-origin: 0 0;
+        transform: scaleY(0.5);
+    }
+}
+
+@mixin border-b($color: #e5e5e5){
+    position: relative;
+    &:before{
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+        border-bottom: 1px solid $color;
+        transform-origin: 0 0;
+        transform: scaleY(0.5);
+    }
+}
+
+@mixin border-l($color: #e5e5e5){
+    position: relative;
+    &:before{
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1px;
+        height: 100%;
+        border-left: 1px solid $color;
+        transform-origin: 0 0;
+        transform: scaleX(0.5);
+    }
+}
+
+@mixin border-r($color: #e5e5e5){
+    position: relative;
+    &:before{
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 1px;
+        height: 100%;
+        border-right: 1px solid $color;
+        transform-origin: 0 0;
+        transform: scaleX(0.5);
+    }
+}
+
+@mixin border-all($color: #e5e5e5) {
+    position: relative;
+    &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        border: 1px solid $color;
+        width: 200%;
+        height: 200%;
+        transform: scale(.5, .5);
+        box-sizing: border-box;
+        transform-origin: 0 0;
+        pointer-events: none;
+    }  
+}  
